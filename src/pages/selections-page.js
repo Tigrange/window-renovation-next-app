@@ -1,11 +1,10 @@
-import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-import FrameMaterial from "@/components/FrameMaterial";
-import GlassType from "@/components/GlassType";
-import FrameColor from "@/components/FrameColor";
+import FrameMaterial from "../components/FrameMaterial";
+import GlassType from "../components/GlassType";
+import FrameColor from "../components/FrameColor";
 
-export default function Home() {
+function SelectionsPage() {
   const router = useRouter();
   const frameMaterial = useSelector((state) => state.frameMaterial);
   const glassType = useSelector((state) => state.glassType);
@@ -31,3 +30,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default SelectionsPage;
