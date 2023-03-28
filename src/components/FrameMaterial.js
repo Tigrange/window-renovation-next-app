@@ -1,9 +1,10 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import { useState } from 'react';
 
 function FrameMaterial() {
   const dispatch = useDispatch();
-  const [selectedFrameMaterial, setSelectedFrameMaterial] = useState("");
+  const frameMaterial = useSelector((state) => state.frameMaterial);
+  const [selectedFrameMaterial, setSelectedFrameMaterial] = useState(frameMaterial);
 
   const handleFrameMaterialChange = (event) => {
     const value = event.target.value;

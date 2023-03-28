@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { useState } from "react";
 
 function FrameColor() {
   const dispatch = useDispatch();
-  const [selectedFrameColor, setSelectedFrameColor] = useState("");
+  const frameColor = useSelector((state) => state.frameColor);
+  const [selectedFrameColor, setSelectedFrameColor] = useState(frameColor);
 
   const handleFrameColorChange = (event) => {
     const value = event.target.value;

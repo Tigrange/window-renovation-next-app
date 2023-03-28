@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { useState } from "react";
 
 function GlassType() {
   const dispatch = useDispatch();
-  const [selectedGlassType, setSelectedGlassType] = useState("");
+  const glassType = useSelector((state) => state.glassType);
+  const [selectedGlassType, setSelectedGlassType] = useState(glassType);
 
   const handleGlassTypeChange = (event) => {
     const value = event.target.value;
